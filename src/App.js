@@ -53,7 +53,7 @@ function App() {
   return (
     <div className="App">
       <Banner />
-      <Formulario colaboradorCadastrado={colaborador => novoColaborador(colaborador)}/>
+      <Formulario teams={teams.map(team => team.nome)} colaboradorCadastrado={colaborador => novoColaborador(colaborador)}/>
 
       {teams.map(team => <Team key={team.nome} nome={team.nome} corPrimaria={team.corPrimaria} corSecundaria ={team.corSecundaria} />)}
 

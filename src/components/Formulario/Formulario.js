@@ -5,16 +5,6 @@ import TextField from '../TextField/TextField'
 import './Formulario.css'
 
 const Formulario = (props) => {
-    
-    const times = [
-        'Programação',
-        'Front-end',
-        'Data Science',
-        'Devops',
-        'UX e Design',
-        'Mobile',
-        'Inovação e Gestão'
-    ]
 
     const [nome, setNome] = useState('')
     const [cargo, setCargo] = useState('')
@@ -51,7 +41,7 @@ const Formulario = (props) => {
                 <DropdownList 
                     obri={true} 
                     label="Time" 
-                    itens={times}
+                    itens={props.teams}
                     valor={time}
                     alterado={valor => setTime(valor)}/>
                 <Button>
