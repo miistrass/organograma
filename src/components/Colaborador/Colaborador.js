@@ -1,8 +1,8 @@
 import './Colaborador.css'
 
-const Colaborador = ({ nome, imagem, cargo }) => { //forma de usar as props
+const Colaborador = ({ nome, imagem, cargo, corDeFundo }) => { //forma de usar as props
     return (<div className='colaborador'>
-        <div className='cabecalho'>
+        <div className='cabecalho' style={{ backgroundColor: corDeFundo }}>
             <img src={imagem} alt={nome} />
         </div>
         <div className='rodape'>
