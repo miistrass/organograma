@@ -4,12 +4,14 @@ import DropdownList from '../DropdownList/DropdownList'
 import TextField from '../TextField/TextField'
 import './Formulario.css'
 
-const Formulario = ({ aoCadastrar, times }) => {
+const Formulario = ({ aoCadastrar, times, cadastrarTime }) => {
 
     const [nome, setNome] = useState('')
     const [cargo, setCargo] = useState('')
     const [imagem, setImagem] = useState('')
     const [time, setTime] = useState('')
+    const [nomeTime, setNomeTime] = useState('')
+    const [corTime, setCorTime] = useState('')
 
     const save = (event) => {
         event.preventDefault()
@@ -27,8 +29,8 @@ const Formulario = ({ aoCadastrar, times }) => {
     }
     
     return(
-        <section className='formulario'>
-            <form onSubmit={save}>
+        <section className='formulario-container'>
+            <form className="formulario" onSubmit={save}>
                 <h2>Preencha os dados para criar o card do colaborador</h2>
                 <TextField 
                     obrigatorio={true} 
@@ -53,6 +55,25 @@ const Formulario = ({ aoCadastrar, times }) => {
                     valor={time}
                     aoAlterado={valor => setTime(valor)}/>
                 <Button texto='Criar Card' />
+            </form>
+            <form className="formulario" onSubmit={(evento) => {
+                evento.preventDefault() 
+                cadastrarTime({nome:nomeTime, cor: corTime})
+            }}>
+                <h2>Preencha os dados para criar um novo time</h2>
+                <TextField 
+                    obrigatorio
+                    label="Nome" 
+                    placeholder="Digite o nome do time" 
+                    valor={nomeTime} 
+                    aoAlterado={valor => setNomeTime(valor)}/>
+                <TextField 
+                    obrigatorio
+                    label="Cor" 
+                    placeholder="Digite a cor do time"
+                    valor={corTime}
+                    aoAlterado={valor => setCorTime(valor)}/>
+                <Button texto='Criar um novo time' />
             </form>
         </section>
     )
