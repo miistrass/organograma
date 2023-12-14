@@ -1,8 +1,8 @@
 import './Button.css'
 
-const Button = (props) => {
+const Button = ({texto}) => {
     return (<button className='button'>
-        {props.children}
+        {texto}
     </button>
 
     )

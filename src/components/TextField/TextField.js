@@ -1,15 +1,11 @@
 import './TextField.css'
 
-const TextField = (props) => {
-    
-    const typed = (event) => {
-        props.alterado(event.target.value)
-    }
+const TextField = ({label, placeholder, valor, aoAlterado, obrigatorio = false}) => {
     
     return(
         <div className='field-text'>
-            <label>{props.label}</label>
-            <input value={props.valor} onChange={typed} required={props.obri} placeholder={props.placeholder}></input>
+            <label>{label}</label>
+            <input value={valor} onChange={evento => aoAlterado(evento.target.value)} required={obrigatorio} placeholder={placeholder}></input>
         </div>
     )
 }
