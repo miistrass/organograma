@@ -47,7 +47,7 @@ function App() {
   const[colaboradores, setColaboradores] = useState([])
 
   function deletarColaborador() {
-    console.log("Deletando colaborador")
+
   }
 
   const novoColaborador = (colaborador) => {
