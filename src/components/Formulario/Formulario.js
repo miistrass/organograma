@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import Button from '../Button/Button'
 import DropdownList from '../DropdownList/DropdownList'
-import TextField from '../TextField/TextField'
+import Field from '../Field/Field'
 import './Formulario.css'
 
 const Formulario = ({ aoCadastrar, times, cadastrarTime }) => {
@@ -32,19 +32,19 @@ const Formulario = ({ aoCadastrar, times, cadastrarTime }) => {
         <section className='formulario-container'>
             <form className="formulario" onSubmit={save}>
                 <h2>Preencha os dados para criar o card do colaborador</h2>
-                <TextField 
+                <Field 
                     obrigatorio={true} 
                     label="Nome" 
                     placeholder="Digite seu nome" 
                     valor={nome} 
                     aoAlterado={valor => setNome(valor)}/>
-                <TextField 
+                <Field 
                     obrigatorio={true} 
                     label="Cargo" 
                     placeholder="Digite seu cargo"
                     valor={cargo}
                     aoAlterado={valor => setCargo(valor)}/>
-                <TextField 
+                <Field 
                     label="Imagem" 
                     placeholder="Digite o endereço  da sua imagem"
                     aoAlterado={valor => setImagem(valor)}/>
@@ -61,14 +61,15 @@ const Formulario = ({ aoCadastrar, times, cadastrarTime }) => {
                 cadastrarTime({nome:nomeTime, cor: corTime})
             }}>
                 <h2>Preencha os dados para criar um novo time</h2>
-                <TextField 
+                <Field 
                     obrigatorio
                     label="Nome" 
                     placeholder="Digite o nome do time" 
                     valor={nomeTime} 
                     aoAlterado={valor => setNomeTime(valor)}/>
-                <TextField 
+                <Field 
                     obrigatorio
+                    type='color'
                     label="Cor" 
                     placeholder="Digite a cor do time"
                     valor={corTime}
