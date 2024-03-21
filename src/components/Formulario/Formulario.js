@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import Button from '../Button/Button'
+import Botao from '../Botao/index'
 import DropdownList from '../DropdownList/DropdownList'
 import Field from '../Field/Field'
 import './Formulario.css'
@@ -54,7 +54,7 @@ const Formulario = ({ aoCadastrar, times, cadastrarTime }) => {
                     itens={times}
                     valor={time}
                     aoAlterado={valor => setTime(valor)}/>
-                <Button texto='Criar Card' />
+                <Botao>Criar Card</Botao>
             </form>
             <form className="formulario" onSubmit={(evento) => {
                 evento.preventDefault() 
@@ -74,7 +74,7 @@ const Formulario = ({ aoCadastrar, times, cadastrarTime }) => {
                     placeholder="Digite a cor do time"
                     valor={corTime}
                     aoAlterado={valor => setCorTime(valor)}/>
-                <Button texto='Criar um novo time' />
+                <Botao>Criar um novo time</Botao>
             </form>
         </section>
     )
