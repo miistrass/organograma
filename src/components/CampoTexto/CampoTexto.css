@@ -1,14 +1,14 @@
-.field{
+.campo-texto{
     margin: 24px 0;
 }
 
-.field label{
+.campo-texto label{
     display: block;
     margin-bottom: 8px;
     font-size: 24px;
 }
 
-.field input{
+.campo-texto input{
     background-color: #FFF;
     box-shadow: 10px 10px 30px rgba(0,0,0,0.06);
     width: 100%;
@@ -18,7 +18,7 @@
     box-sizing: border-box;
 }
 
-.field-color input {
+.campo-texto-color input {
     height: 40px;
     padding: 5px 24px;
 
